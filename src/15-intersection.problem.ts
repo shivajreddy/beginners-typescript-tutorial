@@ -14,7 +14,6 @@ interface Post {
  * How do we type this return statement so it's both
  * User AND { posts: Post[] }
  */
-type n = User & Array<Post>;
 
 export const getDefaultUserAndPosts = (): User & { posts: Array<Post> } => {
   return {
