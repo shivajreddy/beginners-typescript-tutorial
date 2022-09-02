@@ -8,8 +8,20 @@ interface User {
    * - 'user'
    * - 'super-admin'
    */
-  role: string;
+  // role: string;
+  /** Solution
+   * types can be be types of actual values too
+   */
+  role: "admin" | "user" | "super-admin";
 }
+
+// Same thing when using type declarations instead of interfaces
+type User2 = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  role: "admin" | "user" | "super-admin";
+};
 
 export const defaultUser: User = {
   id: 1,
