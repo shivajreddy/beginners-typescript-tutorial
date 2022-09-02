@@ -1,6 +1,7 @@
 import { expect, it } from "vitest";
 
-export const getName = (first: string, last: string) => {
+// putting '?' next to a property is explicitly telling TS that this param is optional
+export const getName = (first: string, last?: string) => {
   if (last) {
     return `${first} ${last}`;
   }

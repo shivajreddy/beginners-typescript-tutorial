@@ -1,6 +1,20 @@
 import { expect, it } from "vitest";
 
-export const getName = (params: { first: string; last: string }) => {
+// '?' next a property tells that this property is options.
+export const getName = (params: { first: string; last?: string }): string => {
+  if (params.last) {
+    return `${params.first} ${params.last}`;
+  }
+  return params.first;
+};
+
+// if using interface, same thing, put '?' next to a property of that interface to tell it's optional
+interface Names {
+  first: string;
+  last?: string;
+}
+
+export const getName2 = (params: Names): string => {
   if (params.last) {
     return `${params.first} ${params.last}`;
   }
